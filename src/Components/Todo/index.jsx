@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import SettingProvider from '../../Context/Settings'
 import Header from '../Header';
 import List from '../List';
 import Form from '../Form';
@@ -6,7 +7,7 @@ import Form from '../Form';
 const Todo = () => {
   const [list, setList] = useState([]);
   const [incomplete, setIncomplete] = useState([]);
-  
+
   function deleteItem(id) {
     const items = list.filter(item => item.id !== id);
     setList(items);
@@ -32,7 +33,7 @@ const Todo = () => {
   return (
     <>
       <Header />
-      <Form list={list} setList={setList}/>
+      <Form list={list} setList={setList} />
       <List list={list} incomplete={incomplete} toggleComplete={toggleComplete} />
     </>
   );
