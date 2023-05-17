@@ -3,14 +3,13 @@ import React from 'react';
 export const SettingsContext = React.createContext();
 
 function SettingProvider({ children }) {
-  const [list, setList] = React.useState([]);
-  const [incomplete, setIncomplete] = React.useState([]);
-  const [defaultValues] = React.useState({
-    difficulty: 4,
-  });
+
+  const [itemsToDisplay, setItemsToDisplay] = React.useState(3);
+  const [hideCompleted, setHideCompleted] = React.useState(true);
+  const [sort, setSort] = React.useState('difficulty');
 
   return (
-    <SettingsContext.Provider value={{ list, incomplete, defaultValues }}>
+    <SettingsContext.Provider value={{ itemsToDisplay, hideCompleted, sort }}>
       {children}
     </SettingsContext.Provider>
   )
