@@ -14,7 +14,6 @@ function List({ list, toggleComplete, incomplete }) {
     return Math.ceil(list.length / settings.itemsToDisplay);
   }
 
-  console.log(paginate(list, activePage, settings.itemsToDisplay));
   return (
     <>
       {paginate(list, activePage, settings.itemsToDisplay).map(item => (
@@ -31,7 +30,8 @@ function List({ list, toggleComplete, incomplete }) {
         onChange={(page) => setPage(page)}
         current={activePage}
         total={calculateTotal()}
-        color="cyan" size="lg" radius={"md"} />
+        color="cyan" size="lg" radius={"md"}
+      />
     </>
   )
 }

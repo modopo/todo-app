@@ -8,11 +8,9 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
         <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/settings">Settings</Link></li>
-            <li><Link to="/login">Login</Link></li>
-          </ul>
+          <Link to="/">Home</Link>
+          <Link to="/settings">Settings</Link>
+          <Link to="/login">Login</Link>
         </nav>
         <Routes>
           <Route exact path="/" element={<Todo />} />
