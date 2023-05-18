@@ -32,9 +32,9 @@ const Todo = () => {
 
   return (
     <>
-      <Header />
+      <Header incomplete={incomplete} />
       <Form list={list} setList={setList} />
-      <List list={list} incomplete={incomplete} toggleComplete={toggleComplete} />
+      <List list={list} toggleComplete={toggleComplete} />
     </>
   );
 };
